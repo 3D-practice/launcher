@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flask
+      app: practice
   template:
     metadata:
       creationTimestamp: null
