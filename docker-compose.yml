@@ -1,0 +1,20 @@
+version: "3"
+services:
+  website:
+    build:
+      context: website/
+      dockerfile: Dockerfile
+    ports:
+      - 8080:5000
+    environment:
+      MONGO_URI: "mongodb://mongo"
+    env_file:
+      - .env
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    volumes:
+      - iceprint_mongo:/data/db
+volumes:
+  iceprint_mongo:
