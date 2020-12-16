@@ -5,14 +5,14 @@ services:
       context: website/
       dockerfile: Dockerfile
     ports:
-      - 6060:5000
+      - 6060:5050
     environment:
       MONGO_URI: "mongodb://mongo"
       ENV: "production"
     env_file:
       - .env
     links:
-      - mongo
+      - mongo:4.4.2
   mongo:
     image: mongo
     volumes:
