@@ -17,5 +17,7 @@ services:
     image: mongo
     volumes:
       - iceprint_mongo:/data/db
+    ports:
+      - 9526:27017
 volumes:
   iceprint_mongo:
